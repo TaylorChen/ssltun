@@ -15,9 +15,9 @@ import (
 	"strings"
 	"sync/atomic"
 
+	"github.com/TaylorChen/ssltun"
 	"github.com/fsnotify/fsnotify"
 	"github.com/lucas-clemente/quic-go/http3"
-	"github.com/lvht/ssltun"
 	"golang.org/x/crypto/acme/autocert"
 )
 
@@ -161,7 +161,7 @@ func main() {
 		url := "https://" + r.Host + r.RequestURI
 		http.Redirect(w, r, url, http.StatusMovedPermanently)
 	})
-	go http.Serve(lnH1, h301)
+	go http.Serve(lnH2, h301)
 
 	// https
 	lnTLS := tls.NewListener(lnH2, tlsCfg)

@@ -8,7 +8,7 @@ If you need IP tunnel, you could use https://github.com/epii1/dtun
 
 Firstly, install the ssltun
 ```
-go get -u -v github.com/lvht/ssltun/cmd/ssltun
+go get -u -v github.com/TaylorChen/ssltun/cmd/ssltun
 ```
 
 Secondly, register one domain name.
@@ -35,7 +35,7 @@ htpasswd -B -c ./users.txt foo
 
 And then start the ssltun,
 ```
-sudo ./ssltun -root /tmp -sites sites.txt -users users.txt
+sudo ./ssltun -root /tmp -sites sites.txt -users users.txt -http2 :8080
 ```
 
 The option of `-root` is used for set static sites root dir.
